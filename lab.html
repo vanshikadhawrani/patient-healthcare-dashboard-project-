@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Patient Care Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+<div class="row">
+
+<!-- Sidebar -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Care Dashboard</title>
+  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css)" rel="stylesheet">
+  <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Sidebar -->
+      <div class="col-md-2 sidebar">
+        <h3 class="text-white text-center mt-3"><i class="fa-solid fa-hospital"></i> Hospital</h3>
+        <ul class="nav flex-column mt-4">
+          <li class="nav-item">
+            <a class="nav-link text-white active" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="profile.html"><i class="fa-solid fa-user"></i> Patient Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="lab.html"><i class="fa-solid fa-flask"></i> Lab Tests</a>
+          </li>
+         
+           <li class="nav-item">
+            <a class="nav-link text-white" href="help.html"><i class="fa-solid fa-circle-question"></i> Help</a>
+          </li>
+
+           </li>
+            <a class="nav-link text-white" href="logout.html"><i class="fa fa-right-from-bracket"></i> Logout</a>
+           </li>
+         </ul>
+      </div>
+
+ <!-- Main Content -->
+
+<div class="col-md-10 p-4">     
+
+ <head>
+<title>Lab Test Booking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Book Lab Test</h2>
+
+<form id="labForm">
+
+<input type="text" id="patientName" placeholder="Patient Name" required>
+
+<select id="testName">
+<option>Blood Test</option>
+<option>X-Ray</option>
+<option>MRI</option>
+<option>CT Scan</option>
+</select>
+
+<input type="date" id="date" required>
+
+<button type="submit">Book Test</button>
+
+</form>
+
+<h3>Recent Booking</h3>
+
+<div id="labList"></div>
+
+<div class="col-md-4">
+<div class="card p-3">
+<h5>Rahul Sharma</h5>
+<p>Age: 45</p>
+<p>Disease: Diabetes</p>
+<p>Recovery</p>
+<div class="progress">
+<div class="progress-bar bg-success" style="width:70%">70%</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-3">
+<h5>Priya Verma</h5>
+<p>Age: 32</p>
+<p>Disease: Fever</p>
+<p>Recovery</p>
+<div class="progress">
+<div class="progress-bar bg-success" style="width:60%">60%</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+
+document.getElementById("labForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("patientName").value
+let test = document.getElementById("testName").value
+let date = document.getElementById("date").value
+
+let bookings = JSON.parse(localStorage.getItem("bookings")) || []
+
+bookings.push({name,test,date})
+
+localStorage.setItem("bookings",JSON.stringify(bookings))
+
+alert("Lab Test Booked Successfully")
+
+})
+
+</script>
+
+</body>
+</html>

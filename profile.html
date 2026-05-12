@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Patient Profile Dashboard</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    body{
+      background:#f4f6f9;
+      font-family:Arial, sans-serif;
+    }
+
+    /* Sidebar */
+
+    .sidebar{
+      width:250px;
+      height:100vh;
+      position:fixed;
+      background:#c90e49;
+      padding-top:20px;
+      color:white;
+    }
+
+    .sidebar h2{
+      text-align:center;
+      margin-bottom:30px;
+      font-weight:bold;
+    }
+
+    .sidebar a{
+      display:block;
+      color:white;
+      text-decoration:none;
+      padding:15px 25px;
+      transition:0.3s;
+      font-size:16px;
+    }
+
+    .sidebar a:hover{
+      background:rgba(255,255,255,0.2);
+    }
+
+    /* Main Content */
+
+    .main-content{
+      margin-left:260px;
+      padding:30px;
+    }
+
+    /* Profile Card */
+
+    .profile-card{
+      background:white;
+      border-radius:15px;
+      padding:30px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-img{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      border:5px solid #0d6efd;
+      object-fit:cover;
+    }
+
+    .patient-name{
+      margin-top:15px;
+      font-weight:bold;
+    }
+
+    .status{
+      background:#198754;
+      color:white;
+      padding:6px 15px;
+      border-radius:20px;
+      font-size:14px;
+      display:inline-block;
+    }
+
+    .info-title{
+      font-weight:bold;
+      color:#0d6efd;
+    }
+
+    /* Cards */
+
+    .health-card{
+      background:white;
+      border-radius:15px;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .health-card h3{
+      color:#0d6efd;
+      margin-top:10px;
+    }
+
+    /* Table */
+
+    .table-container{
+      background:white;
+      margin-top:30px;
+      border-radius:15px;
+      padding:20px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <div class="sidebar">
+
+        <div class="col-md-2 sidebar">
+        <h3 class="text-white text-center mt-3"><i class="fa-solid fa-hospital"></i> Hospital</h3>
+        <ul class="nav flex-column mt-4">
+          <li class="nav-item">
+            <a class="nav-link text-white active" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="profile.html"><i class="fa-solid fa-user"></i> Patient Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="lab.html"><i class="fa-solid fa-flask"></i> Lab Tests</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link text-white" href="help.html"><i class="fa-solid fa-circle-question"></i> Help</a>
+          </li>
+            <a class="nav-link text-white" href="logout.html"><i class="fa fa-right-from-bracket"></i> Logout</a>
+          </li>
+       </ul>
+      </div>
+
+    <a href="#"><i class="fa fa-right-from-bracket"></i> Logout</a>
+
+  </div>
+
+  <!-- Main Content -->
+
+  <div class="main-content">
+
+    <!-- Profile Section -->
+
+    <div class="profile-card">
+
+      <div class="row align-items-center">
+
+        <!-- Left -->
+
+        <div class="col-md-4 text-center">
+
+          <img src="https://i.pravatar.cc/300"
+          class="profile-img">
+
+          <h3 class="patient-name">Rahul Sharma</h3>
+
+          <span class="status">Active Patient</span>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="col-md-8">
+
+          <h2 class="mb-4">Patient Information</h2>
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <p><span class="info-title">Patient ID:</span> PT1001</p>
+
+              <p><span class="info-title">Age:</span> 24</p>
+
+              <p><span class="info-title">Gender:</span> Male</p>
+
+              <p><span class="info-title">Blood Group:</span> B+</p>
+
+            </div>
+
+            <div class="col-md-6">
+
+              <p><span class="info-title">Phone:</span> +91 9876543210</p>
+
+              <p><span class="info-title">Email:</span> rahul@email.com</p>
+
+              <p><span class="info-title">City:</span> Patna</p>
+
+              <p><span class="info-title">Doctor:</span> Dr. Mehta</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+       <!-- Health Cards -->
+
+    <div class="row mt-4">
+
+      <div class="col-md-4">
+
+        <div class="health-card">
+
+          <i class="fa fa-heart-pulse fa-2x text-danger"></i>
+
+          <h5 class="mt-3">Heart Rate</h5>
+
+          <h3>78 BPM</h3>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="health-card">
+
+          <i class="fa fa-droplet fa-2x text-primary"></i>
+
+          <h5 class="mt-3">Blood Pressure</h5>
+
+          <h3>120/80</h3>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="health-card">
+
+          <i class="fa fa-weight-scale fa-2x text-success"></i>
+
+          <h5 class="mt-3">Weight</h5>
+
+          <h3>68 KG</h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Appointment Table -->
+
+    <div class="table-container">
+
+      <h3 class="mb-4">Recent Appointments</h3>
+
+      <table class="table table-bordered table-hover">
+
+        <thead class="table-primary">
+
+          <tr>
+
+            <th>Date</th>
+
+            <th>Doctor</th>
+
+            <th>Department</th>
+
+            <th>Status</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>10 May 2026</td>
+
+            <td>Dr. Mehta</td>
+
+            <td>Cardiology</td>
+
+            <td><span class="badge bg-success">Completed</span></td>
+
+          </tr>
+
+          <tr>
+
+            <td>14 May 2026</td>
+
+            <td>Dr. Singh</td>
+
+            <td>Neurology</td>
+
+            <td><span class="badge bg-warning text-dark">Upcoming</span></td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
